@@ -1,0 +1,289 @@
+/* ── Navbar ── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.4rem 2.5rem;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, padding 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar--scrolled {
+  background: rgba(13, 9, 7, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 0.9rem 2.5rem;
+  border-bottom-color: var(--border);
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.6);
+}
+
+.navbar__inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.navbar__logo-bp {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.navbar__logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ivory);
+  letter-spacing: 0.08em;
+}
+
+/* ── Desktop Links ── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.navbar__link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ivory-muted);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.35s ease;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--gold);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 100%;
+}
+
+/* ── Hamburger ── */
+.navbar__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.navbar__burger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--ivory);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.navbar__burger--open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.navbar__burger--open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__burger--open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ── Mobile Menu ── */
+.navbar__mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  background: rgba(13, 9, 7, 0.98);
+  backdrop-filter: blur(14px);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, padding 0.45s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar__mobile--open {
+  max-height: 600px;
+  padding: 1.5rem 0;
+  border-bottom-color: var(--border);
+}
+
+.navbar__mobile-link {
+  display: block;
+  padding: 0.9rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ivory-muted);
+  text-decoration: none;
+  transition: color 0.3s;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link--active {
+  color: var(--gold);
+}
+
+/* ── Navbar Social Icons ── */
+/* ── Right section (phone + socials + CTA) ── */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar__phone {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--ivory-muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+.navbar__phone:hover {
+  color: var(--gold);
+}
+
+.navbar__prenota-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  padding: 0.55rem 1.4rem;
+  border-radius: 2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+.navbar__prenota-btn:hover {
+  background: var(--gold-dark);
+  transform: translateY(-1px);
+}
+
+.navbar__socials {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.navbar__social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(240, 234, 224, 0.15);
+  border-radius: 50%;
+  color: var(--ivory-muted);
+  text-decoration: none;
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.navbar__social-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.navbar__social-btn:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.08);
+}
+
+.navbar__social-btn--wa:hover {
+  color: #25D366;
+  border-color: #25D366;
+  background: rgba(37,211,102,0.08);
+}
+
+/* ── Mobile Social Row ── */
+.navbar__mobile-socials {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0 0.25rem;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  margin-top: 0.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.navbar__mobile-social {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.navbar__mobile-social:hover { opacity: 1; }
+.navbar__mobile-social--wa { color: #25D366; }
+
+.navbar__mobile-phone {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ivory-muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0 1rem;
+  transition: color 0.3s;
+}
+.navbar__mobile-phone:hover { color: var(--gold); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .navbar__links { display: none; }
+  .navbar__socials { display: none; }
+  .navbar__burger { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .navbar { padding: 1.25rem 1.5rem; }
+  .navbar--scrolled { padding: 0.85rem 1.5rem; }
+}

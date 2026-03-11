@@ -1,0 +1,278 @@
+/* ============================================
+   CAFFÈ PELLICO — Global Stylesheet
+   ============================================ */
+
+:root {
+  /* Accent — terracotta */
+  --gold:        #C4622D;
+  --gold-light:  #D97545;
+  --gold-dark:   #9E4A1F;
+
+  /* Backgrounds — dark luxury */
+  --bg:          #0D0907;
+  --bg-surface:  #130C08;
+  --bg-card:     #1B120D;
+  --bg-elevated: #221510;
+
+  /* Text — light on dark */
+  --ivory:       #F0EAE0;
+  --ivory-muted: #B8AFA8;
+  --white:       #ffffff;
+  --muted:       #5C554F;
+  --border:      rgba(240, 234, 224, 0.07);
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Raleway', 'Segoe UI', sans-serif;
+
+  --transition: 0.35s ease;
+  --shadow-gold: 0 8px 40px rgba(196, 98, 45, 0.28);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ivory);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── Utility: Gold Divider ── */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.gold-divider span {
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+/* ── Utility: Section Wrapper ── */
+.section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--ivory);
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--ivory-muted);
+  font-weight: 300;
+  max-width: 600px;
+}
+
+/* ── Page Hero (shared by inner pages) ── */
+.page-hero {
+  position: relative;
+  height: 42vh;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(196,98,45,0.07) 0%, transparent 70%);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 0.05em;
+}
+
+.page-hero-content .section-label {
+  justify-content: center;
+  display: block;
+  text-align: center;
+}
+
+/* ── Fade-in animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.fade-up-delay-1 { animation-delay: 0.15s; opacity: 0; }
+.fade-up-delay-2 { animation-delay: 0.30s; opacity: 0; }
+.fade-up-delay-3 { animation-delay: 0.45s; opacity: 0; }
+.fade-up-delay-4 { animation-delay: 0.60s; opacity: 0; }
+
+/* ── Gold Button ── */
+.btn-gold {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+  z-index: 0;
+}
+
+.btn-gold:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-gold span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-gold:hover span {
+  color: var(--white);
+}
+
+/* ── Menu Card ── */
+.menu-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.menu-card:hover {
+  border-color: var(--gold-dark);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-4px);
+}
+
+.menu-card-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--ivory);
+  margin-bottom: 0.35rem;
+}
+
+.menu-card-desc {
+  font-size: 0.88rem;
+  color: var(--ivory-muted);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.menu-card-price {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* ── Horizontal Rule ── */
+hr.gold {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 5rem 0;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .section { padding: 4rem 1.25rem; }
+}
+
+/* ── Page Transitions ── */
+.page-transition {
+  animation: pageEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
