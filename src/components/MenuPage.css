@@ -175,13 +175,14 @@
    CATEGORY SECTION
    ============================================= */
 .menu-category {
-  padding: 5rem 2rem;
+  padding: 5rem 2rem 6rem;
   max-width: 900px;
   margin: 0 auto;
   border-bottom: 1px solid var(--border);
 }
 .menu-category:last-child {
   border-bottom: none;
+  padding-bottom: 7rem;
 }
 
 /* Category header */
@@ -217,6 +218,8 @@
   color: var(--ivory);
   letter-spacing: 0.05em;
   position: relative;
+  /* navbar (~70px) + sticky cat nav (~48px) + 16px breathing room */
+  scroll-margin-top: 150px;
 }
 
 .menu-cat-title::after {
@@ -385,6 +388,15 @@
 @media (max-width: 900px) {
   .menu-hero { padding-top: 6rem; }
   .menu-cat-nav { top: 62px; }
+
+  /* Disable reveal animation on mobile: items shown immediately, no opacity trap */
+  .menu-item.reveal,
+  .menu-cat-header.reveal,
+  .menu-cat-photo.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 768px) {

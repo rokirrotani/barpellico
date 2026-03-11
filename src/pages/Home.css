@@ -324,7 +324,9 @@
   display: flex;
   /* 6 originals + 6 clones = 12 items; each item = 33.333% of viewport */
   width: calc(12 * (100vw / 3));
-  animation: galleryScroll 18s linear infinite;
+  animation: galleryScroll 32s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .gallery-carousel__track:hover {
@@ -360,7 +362,7 @@
 @media (max-width: 768px) {
   .gallery-carousel__track {
     width: calc(12 * (100vw / 2));
-    animation-duration: 14s;
+    animation-duration: 30s;
   }
   .gallery-carousel__item {
     width: calc(100vw / 2);
@@ -370,7 +372,7 @@
 @media (max-width: 480px) {
   .gallery-carousel__track {
     width: calc(12 * 100vw);
-    animation-duration: 10s;
+    animation-duration: 36s;
   }
   .gallery-carousel__item {
     width: 100vw;
@@ -409,7 +411,10 @@
 }
 
 
-/* ── RESPONSIVE ── */
+/* ── Hero quick links (mobile only) ── */
+.hero__quick-links {
+  display: none;
+}
 @media (max-width: 1100px) {
   .home-feat__grid { grid-template-columns: 1fr; }
   .feat-card { border-right: none; border-bottom: 1px solid var(--border); }
@@ -427,9 +432,15 @@
 @media (max-width: 600px) {
   .hero__content { padding: 7rem 1.25rem 5rem; }
   .hero__title { font-size: clamp(2.4rem, 11vw, 4rem); }
-  .hero__cta { flex-direction: column; align-items: center; }
-  .hero__cta .btn-gold,
-  .hero__cta .btn-ghost { width: 100%; max-width: 320px; text-align: center; padding: 1rem 2rem; }
+  .hero__cta { display: none; }
+  .hero__quick-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0;
+  }
+  .hero__quick-links .btn-ghost { width: 100%; max-width: 320px; text-align: center; padding: 1rem 2rem; }
   .welcome-strip__inner { padding: 2.5rem 1.25rem; }
   .cta-banner { padding: 3.5rem 1.25rem; }
   .feat-card__body { padding: 1.4rem 1.2rem; }

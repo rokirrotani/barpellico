@@ -153,8 +153,54 @@
 }
 
 @media (max-width: 560px) {
+  .footer {
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
   .footer__inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1.25rem;
+    padding-bottom: 2rem;
+  }
+  .footer__brand {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+  }
+  .footer__logo {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  .footer__tagline {
+    font-size: 0.78rem;
+  }
+  .footer__instagram {
+    font-size: 0.75rem;
+    margin-top: 0;
+  }
+  .footer__nav-title {
+    font-size: 0.63rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.6rem;
+  }
+  .footer__nav a,
+  .footer__info p,
+  .footer__hours p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+  .footer__social-row {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+  }
+  .footer__social-pill {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.6rem;
+  }
+  .footer__bottom p {
+    font-size: 0.68rem;
   }
 }

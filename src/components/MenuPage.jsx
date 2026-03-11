@@ -68,13 +68,12 @@ export default function MenuPage({ label, title, subtitle, categories }) {
         {categories.map((cat, ci) => (
           <section
             key={cat.name}
-            id={slug(cat.name)}
             className="menu-category"
           >
             <div className="menu-cat-header reveal">
               <span className="menu-cat-number">{String(ci + 1).padStart(2, '0')}</span>
               <div className="menu-cat-title-wrap">
-                <h2 className="menu-cat-title">{cat.name}</h2>
+                <h2 className="menu-cat-title" id={slug(cat.name)}>{cat.name}</h2>
               </div>
               {cat.note && <p className="menu-cat-note">{cat.note}</p>}
             </div>

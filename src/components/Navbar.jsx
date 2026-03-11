@@ -27,7 +27,11 @@ export default function Navbar() {
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
         {/* Logo */}
-        <Link to="/" className="navbar__logo" onClick={() => setOpen(false)}>
+        <Link
+          to="/"
+          className="navbar__logo"
+          onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+        >
           <span className="navbar__logo-bp">CP</span>
           <span className="navbar__logo-text">Caffè Pellico</span>
         </Link>

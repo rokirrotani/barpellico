@@ -54,6 +54,12 @@ export default function Home() {
             <Link to="/menu-pranzi" className="btn-gold"><span>Scopri il Menù</span></Link>
             <Link to="/contatti"    className="btn-ghost"><span>Prenota un Tavolo</span></Link>
           </div>
+          <div className="hero__quick-links fade-up fade-up-delay-4">
+            <Link to="/menu-pranzi"      className="btn-ghost"><span>Scopri il Menù</span></Link>
+            <Link to="/menu-bevande"     className="btn-ghost"><span>Bevande</span></Link>
+            <Link to="/menu-caffetteria" className="btn-ghost"><span>Caffè</span></Link>
+            <Link to="/contatti"         className="btn-ghost"><span>Prenota un Tavolo</span></Link>
+          </div>
         </div>
         <a href="#welcome" className="hero__scroll-hint" aria-label="Scorri in basso">
           <span className="hero__scroll-line" />
