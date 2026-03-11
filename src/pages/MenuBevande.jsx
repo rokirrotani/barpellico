@@ -3,7 +3,7 @@
 const categories = [
   {
     name: 'Bibite',
-    icon: '🥤',
+    photo: '/foto_analcolici_2.jpg',
     cols: 2,
     items: [
       { name: 'Acqua (bottiglia)',               price: '1,00 €' },
@@ -21,7 +21,7 @@ const categories = [
   },
   {
     name: 'Cocktail',
-    icon: '🍸',
+    photo: '/foto_spritz.jpg',
     items: [
       { name: 'Analcolico alla frutta',         price: '6,00 €' },
       { name: 'Spritz',                         price: '6,00 €' },
@@ -43,7 +43,6 @@ const categories = [
   },
   {
     name: 'Birra',
-    icon: '🍺',
     items: [
       { name: 'Beck\u2019s Next alla spina',         desc: '0,40 l', price: '5,00 €' },
       { name: 'Birra Moretti Rossa alla spina', desc: '0,40 l', price: '5,00 €' },
@@ -53,7 +52,6 @@ const categories = [
   },
   {
     name: 'Vini Bianchi',
-    icon: '🍾',
     note: 'Calice di vino 5,00 € — Alta Langa calice 7,00 €',
     items: [
       { name: 'Roero Arneis',             producer: 'Renzo Seghesio',    price: '23,00 €' },
@@ -65,7 +63,6 @@ const categories = [
   },
   {
     name: 'Vini Rossi',
-    icon: '🍷',
     items: [
       { name: 'Dolcetto d\u2019Alba \u201cMunfrina\u201d', producer: 'Pelissero',              price: '20,00 €' },
       { name: 'Barbera d\u2019Alba \u201cPiani\u201d',     producer: 'Pelissero',              price: '25,00 €' },
@@ -77,7 +74,7 @@ const categories = [
   },
   {
     name: 'Bollicine',
-    icon: '🥂',
+
     note: 'Franciacorta calice 7,00 €',
     items: [
       { name: 'Prosecco Superiore Extra Dry',            producer: 'BiancaVigna',        price: '20,00 €' },

@@ -52,24 +52,24 @@
 
 .navbar__logo-text {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--ivory);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 /* ── Desktop Links ── */
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.6rem;
   list-style: none;
 }
 
 .navbar__link {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ivory-muted);
   text-decoration: none;
@@ -276,6 +276,24 @@
 }
 .navbar__mobile-phone:hover { color: var(--gold); }
 
+.navbar__mobile-prenota {
+  display: inline-block;
+  margin: 0.5rem 0 0.75rem;
+  background: var(--gold);
+  color: #fff;
+  padding: 0.75rem 3rem;
+  border-radius: 2rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.navbar__mobile-prenota:hover {
+  background: var(--gold-dark);
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .navbar__links { display: none; }
@@ -284,6 +302,8 @@
 }
 
 @media (max-width: 480px) {
-  .navbar { padding: 1.25rem 1.5rem; }
-  .navbar--scrolled { padding: 0.85rem 1.5rem; }
+  .navbar { padding: 1.25rem 1.25rem; }
+  .navbar--scrolled { padding: 0.85rem 1.25rem; }
+  .navbar__prenota-btn { display: none; }
+  .navbar__logo-text { font-size: 0.95rem; }
 }

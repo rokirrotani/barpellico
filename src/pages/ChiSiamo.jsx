@@ -53,13 +53,9 @@ export default function ChiSiamo() {
               senza compromessi, accoglienza autentica, rispetto per le materie prime.
             </p>
           </div>
-          <div className="cs-storia__visual" aria-hidden="true">
-            <div className="cs-quote-box">
-              <span className="cs-quote-mark">"</span>
-              <blockquote>
-                La qualità non è un atto, è un\u2019abitudine.
-              </blockquote>
-              <cite>— Marco Pellico, Fondatore</cite>
+          <div className="cs-storia__visual">
+            <div className="cs-storia__photo-wrap">
+              <img src="/foto_gallu.jpg" alt="Interno Caffè Pellico" />
             </div>
           </div>
         </div>
@@ -94,7 +90,10 @@ export default function ChiSiamo() {
         </div>
       </section>
 
-      <hr className="gold" style={{ maxWidth: 1200, margin: '0 auto' }} />
+      {/* Ambient photo */}
+      <section className="cs-ambient-photo">
+        <img src="/foto_pianochiky.jpg" alt="Atmosfera Caffè Pellico" loading="lazy" />
+      </section>
 
       {/* Team */}
       <section className="cs-team section">

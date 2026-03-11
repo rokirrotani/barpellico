@@ -122,8 +122,9 @@ img {
 /* ── Page Hero (shared by inner pages) ── */
 .page-hero {
   position: relative;
-  height: 42vh;
-  min-height: 280px;
+  min-height: 42vh;
+  padding-top: 5.5rem;
+  padding-bottom: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,8 +264,19 @@ hr.gold {
 ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
 
 /* ── Responsive ── */
-@media (max-width: 768px) {
-  .section { padding: 4rem 1.25rem; }
+@media (max-width: 900px) {
+  .section { padding: 4rem 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  .section { padding: 3rem 1.25rem; }
+  .section-subtitle { max-width: 100%; }
+  .page-hero { min-height: 36vh; padding-top: 6.5rem; }
+  .page-hero-content h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 2.5rem 1rem; }
 }
 
 /* ── Page Transitions ── */

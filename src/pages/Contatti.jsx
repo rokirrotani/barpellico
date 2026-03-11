@@ -1,5 +1,14 @@
 ﻿import './Contatti.css'
 
+const WA_NUMBER = '390175211012'
+
+const OGGETTO_LABELS = {
+  prenotazione: 'Prenotazione tavolo',
+  info: 'Informazioni generali',
+  evento: 'Evento privato',
+  altro: 'Altro',
+}
+
 const info = [
   {
     icon: '◎',
@@ -36,6 +45,32 @@ const info = [
 ]
 
 export default function Contatti() {
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    const f = e.target
+    const nome     = f.nome.value.trim()
+    const cognome  = f.cognome.value.trim()
+    const email    = f.email.value.trim()
+    const telefono = f.telefono.value.trim()
+    const oggetto  = OGGETTO_LABELS[f.oggetto.value] || f.oggetto.value
+    const messaggio = f.messaggio.value.trim()
+
+    const lines = [
+      '*Caffè Pellico — Nuovo messaggio*',
+      '',
+      `*Nome:* ${nome} ${cognome}`,
+      telefono ? `*Telefono:* ${telefono}` : null,
+      email    ? `*Email:* ${email}`       : null,
+      `*Oggetto:* ${oggetto}`,
+      '',
+      messaggio,
+    ].filter(l => l !== null)
+
+    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <div className="contatti-page">
 
@@ -88,12 +123,12 @@ export default function Contatti() {
               <span>—</span>
             </div>
             <p className="section-subtitle">
-              Compila il modulo e ti risponderemo entro 24 ore. Per prenotazioni urgenti
-              preferisci chiamarci direttamente.
+              Compila il modulo e ti risponderemo via WhatsApp il prima possibile.
+              Per prenotazioni urgenti preferisci chiamarci direttamente.
             </p>
           </div>
 
-          <form className="contatti-form" onSubmit={e => e.preventDefault()} noValidate>
+          <form className="contatti-form" onSubmit={handleSubmit} noValidate>
             <div className="contatti-form__row">
               <div className="contatti-form__group">
                 <label htmlFor="cf-nome">Nome *</label>
@@ -105,8 +140,8 @@ export default function Contatti() {
               </div>
             </div>
             <div className="contatti-form__group">
-              <label htmlFor="cf-email">Email *</label>
-              <input type="email" id="cf-email" name="email" required autoComplete="email" />
+              <label htmlFor="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" autoComplete="email" />
             </div>
             <div className="contatti-form__group">
               <label htmlFor="cf-telefono">Telefono</label>
@@ -127,7 +162,7 @@ export default function Contatti() {
               <textarea id="cf-messaggio" name="messaggio" rows="5" required></textarea>
             </div>
             <button type="submit" className="btn-gold contatti-form__submit">
-              <span>Invia Messaggio</span>
+              <span>Invia su WhatsApp</span>
             </button>
           </form>
         </div>

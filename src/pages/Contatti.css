@@ -217,3 +217,17 @@
   .contatti-form-wrap   { grid-template-columns: 1fr; gap: 2.5rem; }
   .contatti-form__row   { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 600px) {
+  .contatti-map { height: 320px; }
+  .contatti-map__label {
+    white-space: normal;
+    text-align: center;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.85rem 1.25rem;
+    max-width: calc(100% - 2rem);
+  }
+  .contatti-form__submit { width: 100%; text-align: center; }
+  .contatti-info__card { padding: 1.75rem 1.25rem; }
+}

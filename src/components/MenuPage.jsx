@@ -57,7 +57,6 @@ export default function MenuPage({ label, title, subtitle, categories }) {
               href={`#${slug(cat.name)}`}
               className="menu-cat-nav__link"
             >
-              {cat.icon && <span className="menu-cat-nav__icon">{cat.icon}</span>}
               {cat.name}
             </a>
           ))}
@@ -75,11 +74,16 @@ export default function MenuPage({ label, title, subtitle, categories }) {
             <div className="menu-cat-header reveal">
               <span className="menu-cat-number">{String(ci + 1).padStart(2, '0')}</span>
               <div className="menu-cat-title-wrap">
-                {cat.icon && <span className="menu-cat-icon">{cat.icon}</span>}
                 <h2 className="menu-cat-title">{cat.name}</h2>
               </div>
               {cat.note && <p className="menu-cat-note">{cat.note}</p>}
             </div>
+
+            {cat.photo && (
+              <div className="menu-cat-photo reveal" style={{'--delay': '0.05s'}}>
+                <img src={cat.photo} alt={cat.name} loading="lazy" />
+              </div>
+            )}
 
             <div className={`menu-items-list${cat.cols === 2 ? ' menu-items-list--two-col' : ''}`}>
               {cat.items.map((item, ii) => (

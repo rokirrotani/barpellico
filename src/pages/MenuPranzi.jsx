@@ -3,7 +3,7 @@
 const categories = [
   {
     name: 'Insalate',
-    icon: '🥗',
+    photo: '/foto_inssalata_cesar.jpg',
     items: [
       { name: 'Nizzarda',      desc: 'Pomodori, acciughe, uova sode, olive taggiasche, sedano, cipolla rossa di Tropea, peperoni', price: '8,00 €' },
       { name: 'Caesar Salad', desc: 'Petto di pollo, crostini di pane, scaglie di parmigiano, salsa al tuorlo',                    price: '8,00 €' },
@@ -15,7 +15,7 @@ const categories = [
   },
   {
     name: 'Focacce',
-    icon: '🫓',
+    photo: '/foto_fofacciae.jpg',
     items: [
       { name: 'Crudo di parma e fior di latte',                          price: '8,00 €'  },
       { name: 'Manzo, rucola e parmigiano 12 mesi',                      price: '10,00 €' },
@@ -29,7 +29,7 @@ const categories = [
   },
   {
     name: 'Antipasti',
-    icon: '🍽️',
+    photo: '/foto_antipasto.jpg',
     items: [
       { name: 'Battuta di fassona con scaglie di grana e rucola',              price: '8,00 €' },
       { name: 'Vitello tonnato della tradizione',                              price: '8,00 €' },
@@ -41,7 +41,7 @@ const categories = [
   },
   {
     name: 'Primi',
-    icon: '🍝',
+    photo: '/foto_primi_pacchero.jpg',
     items: [
       { name: 'Paccheri pomodorini, gamberi e burrata',       price: '9,00 €' },
       { name: 'Chicche di montagna al Raschera',              price: '8,00 €' },
@@ -52,7 +52,7 @@ const categories = [
   },
   {
     name: 'Secondi',
-    icon: '🥩',
+    photo: '/foto_piatto.jpg',
     items: [
       { name: 'Pollo in crosta / ai ferri', price: '9,00 €'  },
       { name: 'Scamone scottato',           price: '10,00 €' },
@@ -62,7 +62,6 @@ const categories = [
   },
   {
     name: 'Dolci del Giorno',
-    icon: '🍮',
     note: 'Preparazione giornaliera — chiedi al bancone',
     items: [
       { name: 'Dolci del giorno', price: 'da 2,50 a 3,50 €' },

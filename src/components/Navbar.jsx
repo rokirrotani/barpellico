@@ -91,6 +91,9 @@ export default function Navbar() {
             {label}
           </NavLink>
         ))}
+        <Link to="/contatti" className="navbar__mobile-prenota" onClick={() => setOpen(false)}>
+          Prenota un Tavolo
+        </Link>
         <div className="navbar__mobile-socials">
           <a href="https://www.instagram.com/caffe_pellico/" target="_blank" rel="noopener noreferrer" className="navbar__mobile-social">Instagram</a>
           <a href="https://www.facebook.com/p/Caff%C3%A8-Pellico-100088418388482/" target="_blank" rel="noopener noreferrer" className="navbar__mobile-social">Facebook</a>

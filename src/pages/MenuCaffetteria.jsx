@@ -3,7 +3,7 @@
 const categories = [
   {
     name: 'Caffetteria',
-    icon: '\u2615',
+    photo: '/macchina_caffe.jpg',
     cols: 2,
     items: [
       { name: 'Caff\u00e8',                      price: '1,20 \u20ac' },
@@ -27,9 +27,9 @@ const categories = [
 export default function MenuCaffetteria() {
   return (
     <MenuPage
-      label="Il Nostro Men\u00f9"
+      label="Il Nostro Menù"
       title="Caffetteria"
-      subtitle="Dal primo espresso del mattino alla pausa pomeridiana: ogni tazza \u00e8 un piccolo rito di piacere."
+      subtitle="Dal primo espresso del mattino alla pausa pomeridiana: ogni tazza è un piccolo rito di piacere."
       categories={categories}
     />
   )
