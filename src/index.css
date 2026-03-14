@@ -8,24 +8,24 @@
   --gold-light:  #D97545;
   --gold-dark:   #9E4A1F;
 
-  /* Backgrounds — dark luxury */
-  --bg:          #0D0907;
-  --bg-surface:  #130C08;
-  --bg-card:     #1B120D;
-  --bg-elevated: #221510;
+  /* Backgrounds — crema chiaro */
+  --bg:          #F7F1E7;
+  --bg-surface:  #FBF7EF;
+  --bg-card:     #FFFAF2;
+  --bg-elevated: #FFFDF8;
 
-  /* Text — light on dark */
-  --ivory:       #F0EAE0;
-  --ivory-muted: #B8AFA8;
+  /* Text — warm dark on light */
+  --ivory:       #3F2F23;
+  --ivory-muted: #6D5A49;
   --white:       #ffffff;
-  --muted:       #5C554F;
-  --border:      rgba(240, 234, 224, 0.07);
+  --muted:       #8A7A6B;
+  --border:      rgba(133, 103, 74, 0.22);
 
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body:    'Raleway', 'Segoe UI', sans-serif;
 
   --transition: 0.35s ease;
-  --shadow-gold: 0 8px 40px rgba(196, 98, 45, 0.28);
+  --shadow-gold: 0 8px 34px rgba(196, 98, 45, 0.16);
 }
 
 *, *::before, *::after {
@@ -138,7 +138,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(196,98,45,0.07) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(196,98,45,0.09) 0%, transparent 70%);
 }
 
 .page-hero-content {

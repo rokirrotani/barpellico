@@ -80,7 +80,12 @@ export default function MenuPage({ label, title, subtitle, categories }) {
 
             {cat.photo && (
               <div className="menu-cat-photo reveal" style={{'--delay': '0.05s'}}>
-                <img src={cat.photo} alt={cat.name} loading="lazy" />
+                <img
+                  src={cat.photo}
+                  alt={cat.name}
+                  loading="lazy"
+                  style={cat.photoPosition ? { objectPosition: cat.photoPosition } : undefined}
+                />
               </div>
             )}
 

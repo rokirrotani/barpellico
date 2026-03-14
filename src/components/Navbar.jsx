@@ -32,8 +32,11 @@ export default function Navbar() {
           className="navbar__logo"
           onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
-          <span className="navbar__logo-bp">CP</span>
-          <span className="navbar__logo-text">Caffè Pellico</span>
+          <img
+            src="/P_Grande_Logo.svg"
+            alt="Caffè Pellico"
+            className="navbar__logo-img"
+          />
         </Link>
 
         {/* Desktop Links */}

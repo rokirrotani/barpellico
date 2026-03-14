@@ -42,7 +42,7 @@
   display: block;
   position: relative;
   z-index: 1;
-  filter: brightness(0.88) saturate(0.82);
+  filter: brightness(0.97) saturate(0.92);
   transition: filter 0.5s ease;
 }
 
@@ -105,7 +105,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: brightness(0.75) saturate(0.7);
+  filter: brightness(0.9) saturate(0.86);
   transition: filter 0.6s ease;
 }
 

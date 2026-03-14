@@ -1,10 +1,6 @@
 .footer {
-  /* Override CSS variables inside footer so text stays light on dark bg */
-  --ivory: #F0EAE0;
-  --ivory-muted: #B8AFA8;
-  --muted: #6B6560;
-  --border: rgba(240,234,224,0.12);
-  background: #080808;
+  --muted: #7A6A5B;
+  background: var(--bg-surface);
   border-top: 1px solid var(--border);
   padding: 4rem 2rem 2rem;
 }
@@ -95,14 +91,14 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
-  border: 1px solid rgba(196,98,45,0.4);
+  border: 1px solid rgba(196,98,45,0.35);
   border-radius: 2rem;
   padding: 0.25rem 0.75rem;
   text-decoration: none;
   transition: background 0.3s, border-color 0.3s;
 }
 .footer__social-pill:hover {
-  background: rgba(201,168,76,0.1);
+  background: rgba(196,98,45,0.1);
   border-color: var(--gold);
 }
 

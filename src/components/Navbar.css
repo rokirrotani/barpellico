@@ -5,17 +5,16 @@
   z-index: 1000;
   padding: 1.4rem 2.5rem;
   background: transparent;
-  border-bottom: 1px solid transparent;
+  border-bottom: none;
   transition: background 0.4s ease, padding 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .navbar--scrolled {
-  background: rgba(13, 9, 7, 0.96);
+  background: rgba(255, 250, 242, 0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 0.9rem 2.5rem;
-  border-bottom-color: var(--border);
-  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 30px rgba(117, 90, 61, 0.14);
 }
 
 .navbar__inner {
@@ -30,8 +29,32 @@
 .navbar__logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  justify-content: center;
   text-decoration: none;
+  width: 88px;
+  height: 88px;
+  overflow: hidden;
+  padding: 0.2rem;
+  border-radius: 999px;
+  background: rgba(255, 247, 237, 0.92);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: background 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease, width 0.25s ease, height 0.25s ease;
+}
+
+.navbar--scrolled .navbar__logo {
+  background: transparent;
+  box-shadow: none;
+  width: 76px;
+  height: 76px;
+  padding: 0;
+}
+
+.navbar__logo-img {
+  display: block;
+  height: 62px;
+  width: auto;
+  max-width: 62px;
+  transition: height 0.25s ease, max-width 0.25s ease, filter 0.25s ease;
 }
 
 .navbar__logo-bp {
@@ -71,7 +94,8 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ivory-muted);
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   text-decoration: none;
   position: relative;
   padding-bottom: 4px;
@@ -89,7 +113,11 @@
 
 .navbar__link:hover,
 .navbar__link--active {
-  color: var(--gold);
+  color: #fff;
+}
+
+.navbar__link--active {
+  font-weight: 700;
 }
 
 .navbar__link:hover::after,
@@ -112,7 +140,7 @@
   display: block;
   width: 24px;
   height: 1.5px;
-  background: var(--ivory);
+  background: #fff;
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
@@ -132,7 +160,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0;
-  background: rgba(13, 9, 7, 0.98);
+  background: rgba(255, 250, 242, 0.98);
   backdrop-filter: blur(14px);
   max-height: 0;
   overflow: hidden;
@@ -153,16 +181,18 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ivory-muted);
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s, background 0.3s;
   width: 100%;
   text-align: center;
 }
 
 .navbar__mobile-link:hover,
 .navbar__mobile-link--active {
-  color: var(--gold);
+  color: #fff;
+  background: rgba(196, 98, 45, 0.2);
 }
 
 /* ── Navbar Social Icons ── */
@@ -217,9 +247,10 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(240, 234, 224, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 50%;
-  color: var(--ivory-muted);
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
   text-decoration: none;
   transition: color 0.3s, border-color 0.3s, background 0.3s;
 }
@@ -232,7 +263,7 @@
 .navbar__social-btn:hover {
   color: var(--gold);
   border-color: var(--gold);
-  background: rgba(201,168,76,0.08);
+  background: rgba(196, 98, 45, 0.08);
 }
 
 .navbar__social-btn--wa:hover {
@@ -246,7 +277,7 @@
   display: flex;
   gap: 2rem;
   padding: 1rem 0 0.25rem;
-  border-top: 1px solid rgba(201,168,76,0.15);
+  border-top: 1px solid var(--border);
   margin-top: 0.5rem;
   width: 100%;
   justify-content: center;
@@ -305,5 +336,7 @@
   .navbar { padding: 1.25rem 1.25rem; }
   .navbar--scrolled { padding: 0.85rem 1.25rem; }
   .navbar__prenota-btn { display: none; }
-  .navbar__logo-text { font-size: 0.95rem; }
+  .navbar__logo { width: 72px; height: 72px; padding: 0.15rem; }
+  .navbar--scrolled .navbar__logo { width: 64px; height: 64px; }
+  .navbar__logo-img { height: 48px; max-width: 48px; }
 }

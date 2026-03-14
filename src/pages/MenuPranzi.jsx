@@ -17,7 +17,7 @@ const categories = [
     name: 'Focacce',
     photo: '/foto_fofacciae.jpg',
     items: [
-      { name: 'Crudo di parma e fior di latte',                          price: '8,00 €'  },
+        { name: 'Crudo di Parma e fior di latte',                          price: '8,00 €'  },
       { name: 'Manzo, rucola e parmigiano 12 mesi',                      price: '10,00 €' },
       { name: 'Salmone Red King e avocado',                              price: '11,00 €' },
       { name: 'Salsiccia di bra, crema di broccoli e ricotta salata',   price: '9,00 €'  },
@@ -54,7 +54,7 @@ const categories = [
     name: 'Secondi',
     photo: '/foto_piatto.jpg',
     items: [
-      { name: 'Pollo in crosta / ai ferri', price: '9,00 €'  },
+        { name: 'Pollo in crosta/ai ferri',   price: '9,00 €'  },
       { name: 'Scamone scottato',           price: '10,00 €' },
       { name: 'Milanese di vitello',        price: '9,00 €'  },
       { name: 'Roast beef all\u2019inglese',    price: '9,00 €'  },
@@ -62,9 +62,8 @@ const categories = [
   },
   {
     name: 'Dolci del Giorno',
-    note: 'Preparazione giornaliera — chiedi al bancone',
     items: [
-      { name: 'Dolci del giorno', price: 'da 2,50 a 3,50 €' },
+        { name: 'Dolci del giorno', price: 'Dai 2,50 € ai 3,50 €' },
     ],
   },
 ]

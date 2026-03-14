@@ -74,7 +74,8 @@ const categories = [
   },
   {
     name: 'Bollicine',
-
+    photo: '/fotoBollicina.jpg',
+    photoPosition: '50% 72%',
     note: 'Franciacorta calice 7,00 €',
     items: [
       { name: 'Prosecco Superiore Extra Dry',            producer: 'BiancaVigna',        price: '20,00 €' },
